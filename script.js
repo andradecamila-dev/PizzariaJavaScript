@@ -96,8 +96,7 @@ pizzaJson.map((item, index)=>{
             else{
             cart.push({
                 identifier,
-                id:pizzaJson[modalKey]
-                .id,
+                id:pizzaJson[modalKey].id,
                 size,
                 qt:modalQt
              });
@@ -116,34 +115,29 @@ pizzaJson.map((item, index)=>{
                     let cartItem = c('.models .cart--item').cloneNode(true);
 
                     let pizzaSizeName;
-                    switch(cart[i].size){
+                    switch (cart[i].size){
                         case 0:
                             pizzaSizeName = 'P';
                             break;
+
                         case 1:
                             pizzaSizeName = 'M';
                             break;
+
                         case 2: pizzaSizeName = 'G';  
                         break;
-                    }
+                    };
 
                     let pizzaName = `${pizzaItem.name} (${pizzaSizeName})`;
-
                     cartItem.querySelector('img').src = pizzaItem.img;
                     cartItem.querySelector('.cart--item-nome').innerHTML = pizzaItem.name;
                     cartItem.querySelector('.cart--item--qt').innerHTML = cart[i].qt;
-                    cartItem.querySelector('.cart--item-qtmais').addEventListener('click', ()=>{
-                    cart[i].qt++;
-                    updateCart();
-                    });
-
                     c('.cart').append(cartItem);
                     
 
-            } 
-        }
-        else {
+            } ;
+        }  else {
                 c('aside').classList.remove('show');
-            }
-        }
+            };
+        };
         
